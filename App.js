@@ -1,15 +1,8 @@
 import React from 'react';
-import {
-  Heading,
-  Button,
-  Center,
-  Text,
-  Input,
-  NativeBaseProvider,
-  extendTheme,
-} from 'native-base';
+import {NativeBaseProvider, extendTheme} from 'native-base';
 
 import DuoLingoSignIn from './screens/DuoLingoSignIn';
+import Flashcards from './screens/Flashcards';
 
 const config = {
   useSystemColorMode: false,
@@ -21,7 +14,7 @@ const customTheme = extendTheme({config});
 const App = () => {
   return (
     <NativeBaseProvider theme={customTheme}>
-      <DuoLingoSignIn />
+      <Flashcards />
     </NativeBaseProvider>
   );
 };

@@ -19,6 +19,7 @@ const DuoLingoSignIn = () => {
         isFullWidth="true"
         size="lg"
         mb="5"
+        maxWidth="300px"
         onChangeText={r => {
           this.state.dlUsername = r;
         }}

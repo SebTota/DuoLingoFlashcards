@@ -14,7 +14,7 @@ const customTheme = extendTheme({config});
 const App = () => {
   return (
     <NativeBaseProvider theme={customTheme}>
-      <Flashcards />
+      <DuoLingoSignIn />
     </NativeBaseProvider>
   );
 };

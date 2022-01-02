@@ -1,5 +1,5 @@
-import React from 'react';
-import {StyleSheet} from 'react-native';
+import React, {useState} from 'react';
+import {StyleSheet, View} from 'react-native';
 import {Heading, Box} from 'native-base';
 
 const Flashcard = () => {
@@ -10,6 +10,16 @@ const Flashcard = () => {
     translationLanguage: 'en',
   };
 
+  const [flashcardText, setFlashcardText] = useState(this.state.word);
+
+  function flipFlashcard() {
+    if (flashcardText === this.state.word) {
+      setFlashcardText(this.state.translation);
+    } else {
+      setFlashcardText(this.state.word);
+    }
+  }
+
   return (
     <Box
       shadow="2"
@@ -18,9 +28,16 @@ const Flashcard = () => {
       h={{base: '64', md: '80', lg: 'md'}}
       _light={{bg: 'coolGray.50'}}
       _dark={{bg: 'gray.700'}}
-      style={{justifyContent: 'center'}}>
-      <Heading fontSize="2xl" fontWeight="700" textAlign="center">
-        {this.state.word}
+      style={{justifyContent: 'center'}}
+      onStartShouldSetResponder={() => flipFlashcard()}>
+      <Heading
+        fontSize="2xl"
+        fontWeight="700"
+        textAlign="center"
+        onPress={() => {
+          flipFlashcard();
+        }}>
+        {flashcardText}
       </Heading>
     </Box>
   );

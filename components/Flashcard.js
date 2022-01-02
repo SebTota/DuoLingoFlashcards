@@ -1,24 +1,25 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {StyleSheet, View} from 'react-native';
 import {Heading, Box} from 'native-base';
 
-const Flashcard = () => {
-  this.state = {
-    language: 'fr',
-    word: 'Bonjour',
-    translation: 'Good Morning',
-    translationLanguage: 'en',
-  };
-
-  const [flashcardText, setFlashcardText] = useState(this.state.word);
+const Flashcard = ({word, translation}) => {
+  const [flashcardText, setFlashcardText] = useState(word);
 
   function flipFlashcard() {
-    if (flashcardText === this.state.word) {
-      setFlashcardText(this.state.translation);
+    if (flashcardText === word) {
+      setFlashcardText(translation);
     } else {
-      setFlashcardText(this.state.word);
+      setFlashcardText(word);
     }
   }
+
+  function resetFlashcardText() {
+    setFlashcardText(word);
+  }
+
+  useEffect(() => {
+    resetFlashcardText();
+  }, [word]);
 
   return (
     <Box

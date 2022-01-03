@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {StyleSheet, View} from 'react-native';
+import {StyleSheet} from 'react-native';
 import {Heading, Box} from 'native-base';
 
 const Flashcard = ({word, translation}) => {
@@ -17,9 +17,7 @@ const Flashcard = ({word, translation}) => {
     setFlashcardText(word);
   }
 
-  useEffect(() => {
-    resetFlashcardText();
-  }, [word]);
+  useEffect(resetFlashcardText, [word]);
 
   return (
     <Box

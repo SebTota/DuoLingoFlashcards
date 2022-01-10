@@ -29,7 +29,7 @@ const Flashcard = ({word, translation}) => {
       shadow="2"
       rounded="lg"
       w="90%"
-      h={{base: '40%', md: '90', lg: 'md'}}
+      h="60%"
       _light={{bg: 'coolGray.50'}}
       _dark={{bg: 'gray.700'}}
       style={{justifyContent: 'center'}}
@@ -49,9 +49,8 @@ const Flashcard = ({word, translation}) => {
           bold
           position="absolute"
           color="coolGray.50"
-          bottom="0"
-          right="0"
-          m="4">
+          bottom="5"
+          right="5">
           <Icon viewBox="0 0 122.88 92.19">
             <G fillRule="nonzero" stroke="none" strokeWidth={1} fill="none">
               <Path
